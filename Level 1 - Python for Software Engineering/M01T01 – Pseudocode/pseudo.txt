@@ -2,16 +2,22 @@ pseudo.txt
 
 
 1. 
+set "user_number" to one
 
-request integer from the user
+set "numbers" to zero
 
-	if the integer is not zero and greater than any previous integer
+while "user_number" is not equal to zero 
 
-store input into variable called “positive_numbers”
+	request integer from the user
 
-if the integer is a zero value
+	if the integer is not zero 
 
-	print the integer that was entered in “positive_numbers”
+		store input into variable called "numbers"
+
+	else the integer is a zero value
+
+		print the largest integer that was entered in “numbers”
+
 
 
 2. 
@@ -20,43 +26,32 @@ request user’s name
 
 store input into variable called “first_name”
 
-	print first_name, “Hello, World”
+print first_name, “Hello, World”
 
 
 
 3.
 
-request user to input how many integers they want to enter
+request user to input a random number of integers
 
-store in variable named “numbers”
+store count of random numbers in variable named “counter”
+store sum of random numbers in variable named "sum"
 
-set sum of integers to zero
+divide "sum" by "counter" 
 
-set counter to zero
+store output as "average"
 
-while counter is less than or equal to “numbers”
-request the user enter an integer
-add this integer to the sum
-add one to the counter
-
-set average to sum divided by “numbers”
-
-print average 
+print "average"
 
 
 4. 
 
-set “grocery_list” as a variable
+request user to input a random grocery list and the products status
 
-read item_name
+if product status is available 
+	store output into variable named “grocery_list” in alphabetical order
 
-read status
-
-store in “grocery_list” in alphabetical order
-
-if item_name is in an available status
-
-print item_name and status in alphabetical order
+print "grocery_list" 
 
 
 5.
@@ -65,14 +60,12 @@ start
 
 read X, Y
 
-	S = X + Y
-
-	A = S / 2
-
-	P = X x Y
+set "S" to the value of X plus Y
+set "A" to the value of S divided by 2
+set "P" to the value of X times Y
 	
-return S, A, P
+print S, A, P
 
 stop
 
-# I used the PDF and also google to understand some aspects of pseudocode and loops and what is required as well as seeking help from my friend Chelsey and booked in a mentor session
+# I used the PDF and also internet to understand some aspects of pseudocode and loops and what is required as well as seeking help from my friend Chelsey and a mentor session
