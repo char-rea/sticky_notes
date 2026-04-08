@@ -1,14 +1,25 @@
-# Assigning a string "4" to the variable surprise_1
-surprise_1 = "4"
-# Assigning a floating-point number 4.5 to the variable surprise_2
-surprise_2 = 4.5
-# Assigning a string "four" to the variable surprise_3
-surprise_3 = "four"
-# Assigning the Boolean value True to the variable surprise_4
-surprise_4 = True
+#convert num1 to integer, num2 to float, num3 to string and string1 to integer
 
-# Use the print() and type() functions to check the data types.
-print(type(surprise_1))
-print(type(surprise_2))
-print(type(surprise_3))
-print(type(surprise_4))
+# Variables
+num1 = 99.23
+num2 = 23
+num3 = 150
+string1 = "100"
+
+# Convert num1 into an integer
+num1 = int(num1)
+
+# Convert num2 into an float
+num2 = float(num2)
+
+# Convert num3 into a string
+num3 = str(num3)
+
+# Convert string1 into an integer
+string1 = int(string1)
+
+# Print the variables and their types after converting
+print(f"{num1} is of {type(num1)}")
+print(f"{num2} is of {type(num2)}")
+print(f"{num3} is of {type(num3)}")
+print(f"{string1} is of {type(string1)}")
