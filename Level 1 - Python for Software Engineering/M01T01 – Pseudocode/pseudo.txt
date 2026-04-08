@@ -1,0 +1,78 @@
+pseudo.txt
+
+
+1. 
+
+request integer from the user
+
+	if the integer is not zero and greater than any previous integer
+
+store input into variable called “positive_numbers”
+
+if the integer is a zero value
+
+	print the integer that was entered in “positive_numbers”
+
+
+2. 
+
+request user’s name
+
+store input into variable called “first_name”
+
+	print first_name, “Hello, World”
+
+
+
+3.
+
+request user to input how many integers they want to enter
+
+store in variable named “numbers”
+
+set sum of integers to zero
+
+set counter to zero
+
+while counter is less than or equal to “numbers”
+request the user enter an integer
+add this integer to the sum
+add one to the counter
+
+set average to sum divided by “numbers”
+
+print average 
+
+
+4. 
+
+set “grocery_list” as a variable
+
+read item_name
+
+read status
+
+store in “grocery_list” in alphabetical order
+
+if item_name is in an available status
+
+print item_name and status in alphabetical order
+
+
+5.
+
+start
+
+read X, Y
+
+	S = X + Y
+
+	A = S / 2
+
+	P = X x Y
+	
+return S, A, P
+
+stop
+
+# I used the PDF and also google to understand some aspects of pseudocode and loops and what is required as well as seeking help from my friend Chelsey and booked in a mentor session
