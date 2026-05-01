@@ -6,7 +6,7 @@ minesweeper = [ ["-", "-", "-", "#", "#"],
 ["-", "#", "#", "-", "-"],
 ["-", "-", "-", "-", "-"] ]
 
-#Return a grid where each dash is replaced by a digit, indicating the number ofmines immediately adjacent to the spot, i.e., horizontally, vertically, anddiagonally.
+#Return a grid where each dash is replaced by a digit, indicating the number of mines adjecent to that dash.
 def count_mines(grid):
     for i in range(len(grid)):
         for j in range(len(grid[i])):
