@@ -153,7 +153,7 @@ def view_my_tasks(login_username):
 # Allow the user to edit the selected task if it is not completed
 def edit_task(selected_task):
 
-    tasks = load_tasks()
+    tasks = load_tasks() 
 
     if selected_task[5].lower() == 'yes':
         print("Completed tasks cannot be edited.\n")
