@@ -560,4 +560,4 @@ e - exit
         exit()
 
     else:
-        print("You have made an invalid selection, please try again.\n")    
+        print("You have made an invalid selection, please try again.\n")
