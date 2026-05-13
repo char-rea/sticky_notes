@@ -261,7 +261,7 @@ def view_completed_tasks():
 # Allow the admin user to delete a task by entering the task title
 def delete_task():
     task_to_delete = input(
-        "Enter the task title to delete: "
+        "Enter the task title to delete: " 
     )
     with open('tasks.txt', 'r', encoding='utf-8') as task_file:
         tasks = task_file.readlines()
