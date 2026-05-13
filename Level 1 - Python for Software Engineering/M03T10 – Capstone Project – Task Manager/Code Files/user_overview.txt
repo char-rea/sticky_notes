@@ -1,0 +1,24 @@
+Total users: 3
+Total tasks: 8
+
+User: admin
+Tasks assigned: 3
+Task percentage: 37.50%
+Completed: 33.33%
+Incomplete: 66.67%
+Overdue: 66.67%
+
+User: demo
+Tasks assigned: 1
+Task percentage: 12.50%
+Completed: 0.00%
+Incomplete: 100.00%
+Overdue: 100.00%
+
+User: test
+Tasks assigned: 1
+Task percentage: 12.50%
+Completed: 0.00%
+Incomplete: 100.00%
+Overdue: 100.00%
+
