@@ -1,4 +1,4 @@
-# A bookstore DMS using SQLite.
+``` # A bookstore DMS using SQLite.
 # This program allows users to manage a bookstore inventory 
 # by performing various operations such as adding new books, 
 # updating existing book details, deleting books, searching 
@@ -154,12 +154,101 @@ def update_book():
     try:
         with sqlite3.connect(DATABASE_NAME) as db:
             cursor = db.cursor()
-            new_qty = validate_input("Enter new quantity: ", int)
-            cursor.execute(
-                "UPDATE book SET qty = ? WHERE id = ?",
-                (new_qty, book_ID)
-            )
+
+            # Check if book exists and fetch current details
+            cursor.execute("""
+                SELECT book.title,
+                       book.authorID,
+                       book.qty,
+                       author.name,
+                       author.country
+                FROM book
+                LEFT JOIN author ON book.authorID = author.id
+                WHERE book.ID = ?
+            """, (book_ID,))
+            result = cursor.fetchone()
+
+            if not result:
+                print("Book not found.")
+                return
+
+            title, authorID, qty, author_name, author_country = result
+
+            # Display current details
+            print("\nCurrent details:")
+            print("Title:", title)
+            print("Author ID:", authorID)
+            print("Author Name:", author_name)
+            print("Author Country:", author_country)
+            print("Quantity:", qty)
+
+            # Update menu
+            print("""
+            What would you like to update?
+            1. Quantity
+            2. Title
+            3. Author ID
+            4. Author Name
+            5. Author Country
+            """)
+
+            choice = validate_input("Select an option: ", int)
+
+            if choice == 1:
+                new_qty = validate_input("Enter new quantity: ", int)
+                cursor.execute(
+                    "UPDATE book SET qty = ? WHERE ID = ?",
+                    (new_qty, book_ID)
+                )
+
+            elif choice == 2:
+                new_title = validate_input("Enter new title: ", str)
+                cursor.execute(
+                    "UPDATE book SET title = ? WHERE ID = ?",
+                    (new_title, book_ID)
+                )
+
+            elif choice == 3:
+                new_authorID = validate_input("Enter new author ID: ", int)
+
+                # Check if author exists
+                cursor.execute(
+                    "SELECT 1 FROM author WHERE id = ?",
+                    (new_authorID,)
+                )
+                if not cursor.fetchone():
+                    name = validate_input("Enter author's name: ", str)
+                    country = validate_input("Enter author's country: ", str)
+                    cursor.execute(
+                        "INSERT INTO author (id, name, country) VALUES (?, ?, ?)",
+                        (new_authorID, name, country)
+                    )
+
+                cursor.execute(
+                    "UPDATE book SET authorID = ? WHERE ID = ?",
+                    (new_authorID, book_ID)
+                )
+
+            elif choice == 4:
+                new_name = validate_input("Enter new author name: ", str)
+                cursor.execute(
+                    "UPDATE author SET name = ? WHERE id = ?",
+                    (new_name, authorID)
+                )
+
+            elif choice == 5:
+                new_country = validate_input("Enter new author country: ", str)
+                cursor.execute(
+                    "UPDATE author SET country = ? WHERE id = ?",
+                    (new_country, authorID)
+                )
+
+            else:
+                print("Invalid choice.")
+                return
+
         print("Book updated successfully.")
+
     except sqlite3.Error as e:
         print("Database error:", e)
 
@@ -172,7 +261,7 @@ def delete_book():
         with sqlite3.connect(DATABASE_NAME) as db:
             cursor = db.cursor()
             cursor.execute(
-                "DELETE FROM book WHERE id = ?",
+                "DELETE FROM book WHERE ID = ?",
                 (book_ID,)
             )
         print("Book deleted successfully.")
@@ -182,7 +271,7 @@ def delete_book():
 
 # Search for a book by ID and display its details
 def search_book():
-    book_id = validate_input("Enter book ID: ", int)
+    book_ID = validate_input("Enter book ID: ", int)
 
     try:
         with sqlite3.connect(DATABASE_NAME) as db:
@@ -192,7 +281,7 @@ def search_book():
                 FROM book
                 LEFT JOIN author ON book.authorID = author.id
                 WHERE book.id = ?
-            """, (book_id,))
+            """, (book_ID,))
             row = cursor.fetchone()
     except sqlite3.Error as e:
         print("Database error:", e)
@@ -270,3 +359,4 @@ while True:
         break
     else:
         print("Invalid choice. Please try again.")
+```
