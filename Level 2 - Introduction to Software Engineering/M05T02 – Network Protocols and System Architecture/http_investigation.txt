@@ -1,0 +1,36 @@
+Network Protocols and System Architecture:
+
+--- Basic Request: ---
+1. Request Headers:
+    "headers":{"host":"postman-echo.com","user-agent":"Mozilla/5.0 (Macintosh; macOS 15.7.4; en-US) 
+                    PowerShell/7.6.1","accept-encoding":"gzip, br","x-forwarded-proto":"https"},"url":"https://po…
+
+2. Response Headers:
+   {[Date, System.String[]], [Transfer-Encoding, System.String[]], [Connection, System.String[]], [ETag, System.String[]]…}
+
+2. Response Body:
+    Body:
+    HTTP/1.1 200 OK
+                    Date: Mon, 25 May 2026 01:38:41 GMT
+                    Transfer-Encoding: chunked  
+                    Connection: keep-alive
+                    ETag: W/"dc-eiaP0+yPHZlHiPfAW0Hh5Ysl2+s"
+                    Vary: Accept-Encoding
+                    x-envoy-upstream-service-time: 5
+                    cf…
+
+3. HTTP Status Code:
+    StatusCode        : 200
+    StatusDescription : OK
+    Meaning: This shows that the request was processed successfully
+
+4. Connection workflow:
+    Connection: keep-alive
+- The client looks up the server’s IP address using the website name.
+- A connection is opened to the server on port 443.
+- A secure (HTTPS) connection is set up using encryption.
+- The client sends an HTTP GET request to the server.
+- The server receives the request and processes it.
+- The server sends back a response with a status code, headers, and data.
+- The connection stays open for reuse or is closed after the response.
+
