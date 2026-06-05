@@ -43,3 +43,23 @@ Responsibilities:
 Concerns:
 - Application logic
 - Coordination between components
+
+------------------------------
+
+File:
+
+Responsibilities:
+
+- Work as the application's database
+- Store task information permanently
+- Save task changes made by users
+- Provide task data when requested by the model
+- Maintain data between application sessions
+
+Concerns:
+
+- Data persistence
+- File reading and writing
+- Data integrity and accuracy
+- File format management 
+- Preventing data loss
