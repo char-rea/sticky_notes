@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Bulletin Board - {{ page_title }}
+{% endblock title %}
+
+{% block content %}
+    <h2>{{ page_title }}</h2>
+
+    <a href="{% url 'post_create' %}">Add post</a>
+
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post_detail' pk=post.pk %}">
+                    {{ post.title }}
+                </a>
+
+                <p>{{ post.content }}</p>
+            </li>
+        {% empty %}
+            <li>No posts available.</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
