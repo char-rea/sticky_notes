@@ -1,0 +1,10 @@
+body {
+    font-family: Arial;
+    background-color: hsl(293, 47%, 89%);
+}
+
+li {
+    background: hsl(293, 47%, 89%);
+    padding: 10px;
+    margin: 10px 0;
+}

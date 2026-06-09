@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Sticky Note</title>
+</head>
+<body>
+    <h1>Create a Sticky Note</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+
+    <p>
+        <a href="{% url 'note_list' %}">Back to notes</a>
+    </p>
+</body>
+</html>
