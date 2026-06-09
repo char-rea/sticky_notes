@@ -1,0 +1,56 @@
+/* ===== Global styling ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e7b0e1; /* light pink */
+    color: #333;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #f472b6;
+    color: white;
+    padding: 1.2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: white;
+    margin-right: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Main content ===== */
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===== Notes ===== */
+.note {
+    background: #fff0f5;
+    border: 1px solid #f472b6;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note h2 {
+    margin-top: 0;
+    color: #f472b6;
+}

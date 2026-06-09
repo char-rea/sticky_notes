@@ -1,0 +1,18 @@
+{% extends "notes/base.html" %}
+
+{% block title %}My Notes{% endblock %}
+
+{% block content %}
+    {% for note in notes %}
+        <div class="note">
+            <h2>{{ note.title }}</h2>
+            <p>{{ note.content }}</p>
+
+            <a href="{% url 'note_delete' note.id %}" class="delete">
+                Delete
+            </a>
+        </div>
+    {% empty %}
+        <p>No notes yet.</p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "notes/base.html" %}
+
+{% block title %}Delete Note{% endblock %}
+
+{% block content %}
+    <div class="confirm-delete">
+        <p>Are you sure you want to delete:</p>
+        <strong>{{ note.title }}</strong>
+
+        <form method="post">
+            {% csrf_token %}
+            <button class="danger" type="submit">Delete</button>
+            <a href="{% url 'note_list' %}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}
