@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'notes/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sticky Notes{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'notes/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>🗒️ Sticky Notes</h1>
+        <nav>
+            <a href="{% url 'note_list' %}">Home</a>
+            <a href="{% url 'note_create' %}">Create Note</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
