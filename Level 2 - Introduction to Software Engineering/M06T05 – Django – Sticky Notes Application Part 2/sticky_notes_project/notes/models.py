@@ -1,6 +1,10 @@
+"""
+Models for sticky notes
+"""
+
 from django.db import models
 
-# Class representing a sticky note in the application
+
 class StickyNote(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
